@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groundwork</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #080808;
+            color: #f0f0f0;
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #444;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 700;
+            line-height: 1.0;
+            margin-bottom: 24px;
+            color: #ffffff;
+            letter-spacing: -0.03em;
+        }
+
+        h1 .dim {
+            color: #333;
+        }
+
+        .tagline {
+            font-size: clamp(15px, 2.5vw, 18px);
+            font-weight: 400;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tagline strong {
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: #222;
+            margin: 40px auto;
+        }
+
+        .points {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 48px;
+            text-align: left;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .point-dot {
+            width: 4px;
+            height: 4px;
+            background: #333;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .form-wrap {
+            background: #0f0f0f;
+            border: 1px solid #1a1a1a;
+            border-radius: 4px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .form-label {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            font-size: 11px;
+            color: #2a2a2a;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.015) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="glow"></div>
+
+    <div class="container">
+        <p class="eyebrow">Early Access</p>
+
+        <h1>GROUND<span class="dim">WORK</span></h1>
+
+        <p class="tagline">
+            Job searching is brutal.<br>
+            <strong>We're the only platform that's honest about it.</strong>
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="points">
+            <div class="point">
+                <div class="point-dot"></div>
+                <span>Know exactly where you stand — no sugarcoating, no generic advice</span>
+            </div>
+            <div class="point">
+                <div class="point-dot"></div>
+                <span>Connect with people at your exact stage, not mentors with an agenda</span>
+            </div>
+            <div class="point">
+                <div class="point-dot"></div>
+                <span>Built for new graduates and anyone starting over after a layoff</span>
+            </div>
+        </div>
+
+        <div class="form-wrap">
+            <p class="form-label">Join the waitlist</p>
+            <iframe data-tally-src="https://tally.so/embed/PdryrB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Groundwork Waitlist"></iframe>
+        </div>
+
+        <p class="footer">Groundwork — 2026</p>
+    </div>
+
+    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+</body>
+</html>
